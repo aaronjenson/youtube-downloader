@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>youtube downloader</title>
+    <script>
+        function onTextChange(e) {
+            var text = e.target.value;
+            // check if the text is a valid youtube url
+            var regex = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+            var match = text.match(regex);
+            if (match) {
+                document.getElementById("download_button").style.display = "block";
+            }
+            else {
+                document.getElementById("download_button").style.display = "none";
+            }
+            console.log("changed");
+        }
+    </script>
+</head>
+<body>
+<div style="text-align: center; width: 100%">
+    <h1>youtube downloader</h1>
+    <form onkeypress="return event.keyCode != 13;">
+        <input type="text" name="url" oninput="onTextChange(event)" placeholder="Enter youtube url">
+    </form>
+    <br>
+    <a id="download_button" style="display: none" href="youtube-downloader-result-17820374.mp4" download>Download</a>
+</div>
+</body>
+</html>
