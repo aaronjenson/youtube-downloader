@@ -50,3 +50,43 @@ p#status {
     font-size: 20px;
     color: #f44336;
 }
+
+/* Media queries for responsive design */
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    input[type="text"] {
+        width: 70%;
+    }
+
+    button[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    p#status {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    input[type="text"] {
+        width: 60%;
+    }
+
+    button[type="submit"] {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    p#status {
+        font-size: 14px;
+    }
+}
