@@ -2,31 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>youtube downloader</title>
-    <script>
-        function onTextChange(e) {
-            var text = e.target.value;
-            // check if the text is a valid youtube url
-            var regex = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
-            var match = text.match(regex);
-            if (match) {
-                document.getElementById("download_button").style.display = "block";
-            }
-            else {
-                document.getElementById("download_button").style.display = "none";
-            }
-            console.log("changed");
-        }
-    </script>
+    <title>YouTube Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-<div style="text-align: center; width: 100%">
-    <h1>youtube downloader</h1>
-    <form onkeypress="return event.keyCode != 13;">
-        <input type="text" name="url" oninput="onTextChange(event)" placeholder="Enter youtube url">
+<div class="container">
+    <h1>YouTube Downloader</h1>
+    <p>Enter the URL of the video you want to download:</p>
+    <form id="download-form">
+        <input type="text" id="video-url" placeholder="https://www.youtube.com/watch?v=...">
+        <button type="submit">Download</button>
     </form>
-    <br>
-    <a id="download_button" style="display: none" href="youtube-downloader-result-17820374.mp4" download>Download</a>
+    <p id="status"></p>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
