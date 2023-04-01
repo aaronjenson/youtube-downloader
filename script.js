@@ -20,8 +20,8 @@ form.addEventListener('submit', (e) => {
 
 function download(url) {
     const a = document.createElement('a');
-    const fileName = `youtube-downloader-result-${Math.floor(Math.random() * 100000)}.mp4`;
-    a.href = './youtube-downloader-result-17820374.mp4';
+    const fileName = `ytdownload-result-${Math.floor(Math.random() * 100000)}.mp4`;
+    a.href = './result.mp4';
     a.setAttribute('download', fileName);
     document.body.appendChild(a);
     a.click();
